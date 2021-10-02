@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact me if you want me to review a game franchise" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/media-queries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:ital@0;1&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/70984d4de4.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="../index.html">Blogland</a>
+        <div class="nav-elements">
+          <div class="nav-element"><a href="posts.html">Posts</a></div>
+          <div class="hamburger-menu">
+            <i class="fas fa-bars fa-lg"></i>
+            <div class="dropdown-menu hide-menu">
+              <a class="dropdown-nav" href="../index.html">Home</a>
+              <a class="dropdown-nav" href="posts.html">Blog Posts</a>
+              <a class="dropdown-nav" href="about.html">About</a>
+              <a class="active dropdown-nav" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="form-container border">
+      <i class="fab fa-mailchimp" id="fab"></i>
+      <h1 id="contact">Contact</h1>
+      <div class="form-content">
+        <form method="post" action="#">
+          <div class="input-text">
+            <div>
+              <label for="name"><h2>Name</h2></label>
+              <input type="text" id="name" />
+              <div class="formError" id="nameError">Please enter more than 5 characters</div>
+            </div>
+            <div>
+              <label for="email"><h2>Email Address</h2></label>
+              <input type="email" id="email" />
+              <div class="formError" id="emailError">Please enter a valid email address</div>
+            </div>
+            <div>
+              <label for="subject"><h2>Subject</h2></label>
+              <input type="text" id="subject" />
+              <div class="formError" id="subjectError">Please enter more than 15 characters</div>
+            </div>
+            <div>
+              <label for="message"><h2>Message</h2></label>
+              <textarea id="inputMessage"></textarea>
+              <div class="formError" id="inputMessageError">Please enter more than 25 characters</div>
+            </div>
+          </div>
+          <input type="submit" class="cta cta-opacity" id="cta-submit" value="Send" />
+        </form>
+        <div class="form-img border"></div>
+      </div>
+      <div id="submit-succeed">
+        <div class="background-submit-message"></div>
+        <div class="submit-message border">
+          <h2>Message Send!</h2>
+          <p>Thank you for your email! I will answer you as fast as possible. Until then, I hope you enjoy your time in here!</p>
+          <a class="cta" href="contact.html">Return</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="author">
+          <h4>Author:</h4>
+          <p>Lars W.</p>
+        </div>
+        <div class="established">
+          <h4>Established:</h4>
+          <p>19 October, 2020</p>
+        </div>
+        <div class="country">
+          <h4>Country:</h4>
+          <p>Norway</p>
+        </div>
+        <div class="links">
+          <h4>Links:</h4>
+          <ul>
+            <li><a href="posts.html">Blog Posts</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="community">
+          <h4>Community:</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+            </li>
+            <li>
+              <a href="https://www.reddit.com/"><i class="fab fa-reddit-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    <script src="../js/form-validater.js"></script>
+  </body>
+</html>

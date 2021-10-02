@@ -1,0 +1,24 @@
+main {
+  max-width: 1500px; /*Needed to make main a little wider than the website in general to make the content look better*/
+}
+
+.about-container {
+  width: 35%;
+  background-color: #e8e8e8;
+  padding: 20px 7% 5px 20px;
+  position: relative;
+  margin-bottom: 100px; /* To secure that the about-img doesn't crash with the footer*/
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.about-img {
+  background-image: url(../images/about.jpg);
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  height: 100%;
+  width: 100%;
+}

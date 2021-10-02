@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Overview of the posts, take a look and sort them by date" />
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/posts-and-specific-post.css" />
+    <link rel="stylesheet" href="../css/media-queries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:ital@0;1&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/70984d4de4.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="../index.html">Blogland</a>
+        <div class="nav-elements">
+          <div class="nav-element active"><a href="posts.html">Posts</a></div>
+          <div class="hamburger-menu">
+            <i class="fas fa-bars fa-lg"></i>
+            <div class="dropdown-menu hide-menu">
+              <a class="dropdown-nav" href="../index.html">Home</a>
+              <a class="active dropdown-nav" href="posts.html">Blog Posts</a>
+              <a class="dropdown-nav" href="about.html">About</a>
+              <a class="dropdown-nav" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="banner-container"></div>
+      <div class="featured-post"></div>
+      <div class="cta-sorting">
+        <div>
+          <a class="active cta new-cta">New - Old</a>
+          <a class="not-active cta old-cta block">Old - New</a>
+        </div>
+        <div>
+          <a class="not-active cta a-z-cta">A-Z</a>
+          <a class="not-active cta z-a-cta">Z-A</a>
+        </div>
+      </div>
+      <section class="boxes long-boxes loader"></section>
+      <section class="short-boxes"></section>
+      <div class="cta-wrapper">
+        <a class="cta not-active load-more">Load more</a>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="author">
+          <h4>Author:</h4>
+          <p>Lars W.</p>
+        </div>
+        <div class="established">
+          <h4>Established:</h4>
+          <p>19 October, 2020</p>
+        </div>
+        <div class="country">
+          <h4>Country:</h4>
+          <p>Norway</p>
+        </div>
+        <div class="links">
+          <h4>Links:</h4>
+          <ul>
+            <li class="active"><a href="posts.html">Blog Posts</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="community">
+          <h4>Community:</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+            </li>
+            <li>
+              <a href="https://www.reddit.com/"><i class="fab fa-reddit-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    <script src="../js/posts.js"></script>
+  </body>
+</html>

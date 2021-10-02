@@ -1,0 +1,145 @@
+/* Banner */
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  background: #707070;
+}
+.banner-container {
+  height: 280px;
+}
+.banner h1 {
+  color: #f2be22;
+  filter: drop-shadow(0px 12px 6px #000000);
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate()*/
+  z-index: 1;
+}
+
+.banner-img {
+  height: 400px;
+  background-image: url(../images/banner-homepage.jpg);
+  background-attachment: fixed; /*https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment */
+  background-size: cover;
+  background-position: 50%;
+  opacity: 30%;
+  position: relative;
+}
+
+/* Carousel */
+.carousel {
+  height: 420px;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/** Carousel - posts **/
+.carousel-posts {
+  display: flex;
+  width: 350%;
+  overflow: hidden;
+  height: 400px;
+  margin-top: 20px;
+  text-align: center;
+  transition: 1s;
+}
+
+.new-group {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-right: 4.7%;
+  position: relative;
+}
+.carousel-post {
+  background-color: #555555;
+  cursor: pointer;
+  flex: 1;
+}
+
+.post-img {
+  border-radius: 10px;
+  background-position: 50%;
+  height: 398px;
+  background-size: cover;
+}
+
+.post-text {
+  position: relative;
+  z-index: -1;
+  top: -70%;
+}
+.post-text h2 {
+  filter: drop-shadow(0px 8px 6px #000000);
+}
+
+.carousel-post:hover .post-img {
+  opacity: 10%;
+  transition: 0.6s;
+}
+.carousel-post:hover .post-text {
+  z-index: 20;
+}
+
+/** Carousel - loader **/
+
+.loader {
+  top: 600px;
+  position: absolute;
+  width: 75px;
+  margin: auto;
+}
+
+/** Carousel - Arrows **/
+
+.arrow {
+  font-size: 47px;
+  cursor: pointer;
+  z-index: 10;
+  color: #e8e8e8;
+}
+.arrow .arrow-left,
+.arrow .arrow-right {
+  display: none;
+}
+.arrow .arrow-right {
+  text-align: end;
+}
+
+/** Carousel - Circles **/
+.circle-container {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  margin: 10px;
+}
+.circle-active {
+  background-color: #d93814;
+  transition: 0.8s;
+}
+
+/*About Box and Contact Box*/
+.long-boxes {
+  margin-top: 20px;
+}
+
+.about-img {
+  background-image: url(../images/about.jpg);
+}
+.contact-img {
+  background-image: url(../images/tropico-wp.jpg);
+}
