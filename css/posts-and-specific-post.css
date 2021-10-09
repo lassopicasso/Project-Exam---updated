@@ -68,6 +68,13 @@
   top: 300px;
 }
 
+.cta-sorting-posts,
+.featured-post-posts,
+.feautered-post-specific,
+.load-more {
+  display: none;
+}
+
 /** Posts page - Long boxes **/
 .long-boxes {
   margin-top: 5px;

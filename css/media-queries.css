@@ -142,6 +142,9 @@
   .featured-post .sort-type {
     margin-top: 0px;
   }
+  .carousel-posts h2 {
+    color: #f2be22;
+  }
 }
 
 @media only screen and (max-width: 500px) {

@@ -4,12 +4,17 @@ const longBoxes = document.querySelector(".long-boxes");
 const shortBoxes = document.querySelector(".short-boxes");
 const loadMoreCta = document.querySelector(".load-more");
 
+const ctaSorting = document.querySelector(".cta-sorting");
+
 let sortType = "Newest Post";
 /* Call api */
 async function runGetPostsFirst() {
   try {
     let postsArray = await getPosts("https://landblog.thefed.no/wp-json/wp/v2/posts?_embed&per_page=100");
     longBoxes.classList.toggle("loader");
+    ctaSorting.style.display = "flex";
+    featuredPost.style.display = "block";
+    loadMoreCta.style.display = "block";
     createHTML(postsArray, "10posts");
   } catch (error) {
     longBoxes.innerHTML = message("error", error);
