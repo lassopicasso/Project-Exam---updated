@@ -4,6 +4,7 @@ const featuredSmallImg = document.querySelector(".left-box .featured-small-img")
 const leftBox = document.querySelector(".left-box");
 const rightBox = document.querySelector(".right-box");
 
+const ctaSorting = document.querySelector(".cta-return-to-post");
 const postContent = document.querySelector(".post-content");
 
 const disableScroll = document.querySelector("body");
@@ -18,6 +19,7 @@ async function fetchGame() {
     let game = await getPosts(`https://landblog.thefed.no/wp-json/wp/v2/posts/${id}?_embed&per_page=100`);
     featuredPost.innerHTML = "";
     postContent.style.display = "flex";
+    ctaSorting.style.display = "flex";
     createHTML(game);
   } catch (error) {
     featuredPost.innerHTML = message("error", error);

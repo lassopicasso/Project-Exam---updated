@@ -70,8 +70,8 @@
 
 .cta-sorting-posts,
 .featured-post-posts,
-.feautered-post-specific,
-.load-more {
+.load-more,
+.cta-return-to-post {
   display: none;
 }
 
