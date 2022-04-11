@@ -127,6 +127,9 @@ function timeline(imgContainer) {
   const amountGames = document.querySelectorAll(".timeline-game").length;
   timelineWrapper.style.width = 50 * amountGames + "%";
   document.querySelector(".timeline-arrow-left").style.display = "none";
+  if (amountGames < 3) {
+    document.querySelector(".timeline-arrow-right").style.display = "none";
+  }
   const arrows = document.querySelectorAll(".timeline-arrow");
 
   arrows.forEach((arrow) => {
