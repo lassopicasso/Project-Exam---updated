@@ -50,11 +50,14 @@ function createHTML(game) {
     ${game.content.rendered}
     </div>
     `;
-  // document.querySelector(".wp-block-group__inner-container").classList.add("imgContainer");
   document.querySelector(".wp-block-group").classList.add("imgContainer");
-
   const imgContainer = document.querySelector(".wp-block-group");
-  imgContainer.addEventListener("click", largeImg);
+  timeline(imgContainer);
+  const focusGame = document.querySelectorAll(".timeline-game");
+
+  focusGame.forEach((game) => {
+    game.addEventListener("click", largeImg);
+  });
 
   //Left Box
   featuredSmallImg.style.backgroundImage = `url(${featuredImg})`;
@@ -96,4 +99,65 @@ function unfocus() {
   disableScroll.style.overflow = "visible";
   const imgFocus = document.querySelector(".focus-img-container");
   imgFocus.remove();
+}
+
+/*Create carousel*/
+
+function timeline(imgContainer) {
+  const gamesTimeline = document.querySelectorAll(".wp-block-group");
+  for (let i = 1; i < gamesTimeline.length; i++) {
+    gamesTimeline[i].classList.add("timeline-game");
+  }
+
+  imgContainer.appendChild(addWrapper("timeline-wrapper"));
+
+  function addWrapper(wrapper) {
+    let div = document.createElement("div");
+    div.classList.add(wrapper);
+    return div;
+  }
+
+  const timelineWrapper = document.querySelector(".timeline-wrapper");
+  timelineWrapper.innerHTML += `<i class="fas fa-arrow-circle-left arrow-left timeline-arrow timeline-arrow-left" id="timeline-arrow-left"></i>`;
+  document.querySelectorAll(".timeline-game").forEach((game) => {
+    timelineWrapper.appendChild(game);
+  });
+  timelineWrapper.innerHTML += `<i class="fas fa-arrow-circle-right arrow-right timeline-arrow timeline-arrow-right "></i>`;
+
+  const amountGames = document.querySelectorAll(".timeline-game").length;
+  timelineWrapper.style.width = 50 * amountGames + "%";
+  document.querySelector(".timeline-arrow-left").style.display = "none";
+  const arrows = document.querySelectorAll(".timeline-arrow");
+
+  arrows.forEach((arrow) => {
+    arrow.addEventListener("click", checkArrow);
+  });
+}
+
+let arrowDistance = 0;
+
+function checkArrow(event) {
+  const wrapperLength = document.querySelectorAll(".timeline-game").length * -50 + 100;
+  const arrowLeft = document.querySelector("#timeline-arrow-left");
+  const arrowRight = document.querySelector(".timeline-arrow-right");
+  if (event.target.classList.contains("timeline-arrow-right")) {
+    arrowDistance += -50;
+    document.querySelector(".timeline-wrapper").style.marginLeft = arrowDistance + "%";
+  } else {
+    console.log("else");
+    arrowDistance += 50;
+    document.querySelector(".timeline-wrapper").style.marginLeft = arrowDistance + "%";
+  }
+  if (arrowDistance === 0) {
+    arrowLeft.style.display = "none";
+  } else {
+    arrowLeft.style.display = "inline-block";
+  }
+  console.log(arrowDistance);
+  console.log(wrapperLength);
+  if (arrowDistance === wrapperLength) {
+    arrowRight.style.display = "none";
+  } else {
+    arrowRight.style.display = "inline-block";
+  }
 }
