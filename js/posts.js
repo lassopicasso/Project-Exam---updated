@@ -10,7 +10,7 @@ let sortType = "Newest Post";
 /* Call api */
 async function runGetPostsFirst() {
   try {
-    let postsArray = await getPosts("https://landblog.thefed.no/wp-json/wp/v2/posts?_embed&per_page=100");
+    let postsArray = await getPosts("https://thefed.no/blogland-v2/wp-json/wp/v2/posts?_embed&per_page=100");
     longBoxes.classList.toggle("loader");
     ctaSorting.style.display = "flex";
     featuredPost.style.display = "block";

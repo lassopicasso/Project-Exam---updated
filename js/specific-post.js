@@ -16,13 +16,14 @@ const id = params.get("id");
 /*Get specific post*/
 async function fetchGame() {
   try {
-    let game = await getPosts(`https://landblog.thefed.no/wp-json/wp/v2/posts/${id}?_embed&per_page=100`);
+    let game = await getPosts(`https://thefed.no/blogland-v2/wp-json/wp/v2/posts/${id}?_embed&per_page=100`);
     featuredPost.innerHTML = "";
     postContent.style.display = "flex";
     ctaSorting.style.display = "flex";
     createHTML(game);
   } catch (error) {
     featuredPost.innerHTML = message("error", error);
+    console.log(error);
   }
 }
 fetchGame();
@@ -33,7 +34,6 @@ function createHTML(game) {
   let title = game.title.rendered;
   let featuredImg = game._embedded["wp:featuredmedia"][0].source_url;
   let dateCorner = dateFormat(game.date);
-
   //Page Title
   document.title = title;
   //Banner
@@ -50,15 +50,15 @@ function createHTML(game) {
     ${game.content.rendered}
     </div>
     `;
-
-  document.querySelector(".wp-block-group__inner-container").classList.add("imgContainer");
+  // document.querySelector(".wp-block-group__inner-container").classList.add("imgContainer");
+  document.querySelector(".wp-block-group").classList.add("imgContainer");
 
   const imgContainer = document.querySelector(".wp-block-group");
   imgContainer.addEventListener("click", largeImg);
 
   //Left Box
   featuredSmallImg.style.backgroundImage = `url(${featuredImg})`;
-  const originYearText = document.querySelector(".wp-block-group__inner-container p").innerHTML;
+  const originYearText = document.querySelector(".wp-block-group p").innerHTML;
   const originYear = originYearText.slice(originYearText.length - 4);
   //https://stackoverflow.com/questions/5873810/how-can-i-get-last-characters-of-a-string
   const author = game._embedded.author[0].name;

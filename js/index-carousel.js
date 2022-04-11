@@ -22,7 +22,7 @@ let postsArray = [];
 /*Call API*/
 async function runGetPostsFirst() {
   try {
-    postsArray = await getPosts("https://landblog.thefed.no/wp-json/wp/v2/posts?_embed&per_page=100");
+    postsArray = await getPosts("https://thefed.no/blogland-v2/wp-json/wp/v2/posts?_embed&per_page=100");
     carouselGroup1.classList.toggle("loader");
     arrowRight.style.display = "block";
     createGroups();
