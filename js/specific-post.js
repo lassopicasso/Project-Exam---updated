@@ -102,7 +102,7 @@ function unfocus() {
 }
 
 /*Create carousel*/
-
+let carouselSwing = 50;
 function timeline(imgContainer) {
   const gamesTimeline = document.querySelectorAll(".wp-block-group");
   for (let i = 1; i < gamesTimeline.length; i++) {
@@ -125,7 +125,14 @@ function timeline(imgContainer) {
   timelineWrapper.innerHTML += `<i class="fas fa-arrow-circle-right arrow-right timeline-arrow timeline-arrow-right "></i>`;
 
   const amountGames = document.querySelectorAll(".timeline-game").length;
-  timelineWrapper.style.width = 50 * amountGames + "%";
+
+  /*Check how much of width the carousel wrapper shall take, based on the window width*/
+  if (screen.width > 600) {
+    timelineWrapper.style.width = 50 * amountGames + "%";
+  } else {
+    timelineWrapper.style.width = 100 * amountGames + "%";
+    carouselSwing = 100;
+  }
   document.querySelector(".timeline-arrow-left").style.display = "none";
   if (amountGames < 3) {
     document.querySelector(".timeline-arrow-right").style.display = "none";
@@ -140,15 +147,15 @@ function timeline(imgContainer) {
 let arrowDistance = 0;
 
 function checkArrow(event) {
-  const wrapperLength = document.querySelectorAll(".timeline-game").length * -50 + 100;
+  const wrapperLength = document.querySelectorAll(".timeline-game").length * -carouselSwing + 100;
   const arrowLeft = document.querySelector("#timeline-arrow-left");
   const arrowRight = document.querySelector(".timeline-arrow-right");
   if (event.target.classList.contains("timeline-arrow-right")) {
-    arrowDistance += -50;
+    arrowDistance += -carouselSwing;
     document.querySelector(".timeline-wrapper").style.marginLeft = arrowDistance + "%";
   } else {
     console.log("else");
-    arrowDistance += 50;
+    arrowDistance += carouselSwing;
     document.querySelector(".timeline-wrapper").style.marginLeft = arrowDistance + "%";
   }
   if (arrowDistance === 0) {
